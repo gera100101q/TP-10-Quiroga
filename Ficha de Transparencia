@@ -1,0 +1,17 @@
+**Herramienta:** Claude (Anthropic)
+
+**Objetivo:**
+Quería hacer un videojuego de Asteroides en HTML5 Canvas. Necesitaba una base para la nave, los asteroides, los disparos, las colisiones y algunos power-ups, tratando de aplicar las figuras que vimos en clase.
+
+**Prompt exacto:**
+“Necesito una bace para la nave, asteroides, disparo y coliciones para el juego q te pase q es como un asteroid, necesito el codigo en script.js.”
+
+
+**Fundamentación:**
+Intenté explicar de forma simple lo que necesitaba. La IA me sirvió principalmente para tener una base desde la cual empezar y para resolver algunas partes que no tenía del todo claras.
+
+**Aprendizaje:**
+Entendí mejor cómo funciona el Canvas y cómo se pueden combinar líneas, arcos y otras formas para crear los elementos del juego. También entendí que el juego necesita un ciclo que actualice constantemente la posición de los objetos y vuelva a dibujar la pantalla. La parte de las colisiones me ayudó a entender cómo se comprueba si dos objetos están cerca o se están tocando.
+
+**Verificación:**
+Después de tener el código, lo probé en el navegador para comprobar que el juego funcionara. Revisé principalmente que la nave pudiera moverse, que los disparos funcionaran y que los asteroides reaccionaran al ser alcanzados. También fui haciendo algunos cambios para adaptar el resultado a lo que pedía el TP y corregir problemas que aparecieron al probarlo.
