@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Asteroides | TP10 - Videojuego Arcade con Canvas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Work+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="encabezado">
+    <span class="pretitulo">TP10 — Videojuego Arcade con HTML5 Canvas</span>
+    <h1>Asteroides</h1>
+    <p>Pilotá la nave, esquivá y destruí los asteroides, y recolectá power-ups antes de quedarte sin vidas.</p>
+  </header>
+
+  <main class="zona-juego">
+
+    <div class="panel-canvas">
+      <canvas id="lienzo" width="800" height="600" aria-label="Área de juego de Asteroides"></canvas>
+      <div id="pantalla-inicio" class="overlay">
+        <h2>Asteroides</h2>
+        <p>Destruí los asteroides, esquivá los choques y agarrá las estrellas de power-up.</p>
+        <button id="boton-iniciar" type="button" class="boton">Iniciar juego</button>
+      </div>
+      <div id="pantalla-fin" class="overlay oculto">
+        <h2>Fin del juego</h2>
+        <p id="puntaje-final">Puntaje: 0</p>
+        <button id="boton-reiniciar" type="button" class="boton">Jugar de nuevo</button>
+      </div>
+    </div>
+
+    <aside class="panel-info">
+      <div class="bloque-info">
+        <h3>Controles</h3>
+        <ul>
+          <li><span class="tecla">&larr;</span> <span class="tecla">&rarr;</span> Rotar la nave</li>
+          <li><span class="tecla">&uarr;</span> Acelerar / propulsión</li>
+          <li><span class="tecla">Espacio</span> Disparar</li>
+        </ul>
+      </div>
+
+      <div class="bloque-info">
+        <h3>Figuras complejas aplicadas</h3>
+        <ul>
+          <li><strong>Líneas:</strong> nave vectorial (moveTo / lineTo)</li>
+          <li><strong>Arcos:</strong> asteroides y llama del propulsor</li>
+          <li><strong>Espiral:</strong> efecto de explosión al destruir un asteroide</li>
+          <li><strong>Estrella:</strong> power-ups de velocidad y escudo</li>
+        </ul>
+      </div>
+
+      <div class="bloque-info">
+        <h3>Estado</h3>
+        <p id="estado-texto">Presioná "Iniciar juego" para comenzar.</p>
+      </div>
+    </aside>
+
+  </main>
+
+  <footer class="pie">
+    <p>Laboratorio de Programación — 6° G — Trabajo Práctico N° 10</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

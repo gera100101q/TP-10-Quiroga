@@ -1,0 +1,216 @@
+/* =========================================================
+   TP10 — Asteroides (HTML5 Canvas)
+   Estética: retro-espacial, minimalista, líneas finas
+   ========================================================= */
+
+:root {
+  --fondo: #05070c;
+  --panel: #0c0f18;
+  --linea: #263041;
+  --texto: #e9ecf2;
+  --texto-suave: #8b93a5;
+  --acento: #6ee7d8;
+  --peligro: #f2665b;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: var(--fondo);
+  color: var(--texto);
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 300;
+  line-height: 1.6;
+}
+
+.encabezado {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 48px 24px 24px;
+  border-bottom: 1px solid var(--linea);
+}
+
+.pretitulo {
+  display: block;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--acento);
+  margin-bottom: 10px;
+}
+
+.encabezado h1 {
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 700;
+  font-size: clamp(1.8rem, 4vw, 2.4rem);
+  margin: 0 0 8px;
+  letter-spacing: 0.02em;
+}
+
+.encabezado p {
+  color: var(--texto-suave);
+  max-width: 60ch;
+  margin: 0;
+}
+
+.zona-juego {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 40px 24px 60px;
+  display: grid;
+  grid-template-columns: 1fr 260px;
+  gap: 32px;
+  align-items: start;
+}
+
+/* ---------- Canvas ---------- */
+
+.panel-canvas {
+  position: relative;
+  background-color: var(--panel);
+  border: 1px solid var(--linea);
+  padding: 4px;
+  line-height: 0;
+}
+
+canvas {
+  display: block;
+  width: 100%;
+  height: auto;
+  background-color: #000000;
+  cursor: crosshair;
+}
+
+.overlay {
+  position: absolute;
+  inset: 4px;
+  background-color: rgba(5, 7, 12, 0.92);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 24px;
+}
+
+.overlay.oculto {
+  display: none;
+}
+
+.overlay h2 {
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 500;
+  font-size: 1.6rem;
+  margin: 0 0 12px;
+}
+
+.overlay p {
+  color: var(--texto-suave);
+  max-width: 42ch;
+  margin: 0 0 24px;
+}
+
+.boton {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  background-color: transparent;
+  color: var(--acento);
+  border: 1px solid var(--acento);
+  padding: 12px 26px;
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.boton:hover {
+  background-color: var(--acento);
+  color: #05070c;
+}
+
+/* ---------- Panel lateral ---------- */
+
+.panel-info {
+  border-left: 1px solid var(--linea);
+  padding-left: 28px;
+}
+
+.bloque-info {
+  margin-bottom: 32px;
+}
+
+.bloque-info:last-child {
+  margin-bottom: 0;
+}
+
+.bloque-info h3 {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--texto-suave);
+  margin: 0 0 14px;
+}
+
+.bloque-info ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 0.9rem;
+  color: var(--texto-suave);
+}
+
+.bloque-info li {
+  margin-bottom: 10px;
+}
+
+.tecla {
+  display: inline-block;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  color: var(--texto);
+  border: 1px solid var(--linea);
+  border-radius: 3px;
+  padding: 2px 7px;
+  margin-right: 4px;
+}
+
+#estado-texto {
+  font-size: 0.9rem;
+  color: var(--texto-suave);
+  margin: 0;
+}
+
+/* ---------- Pie ---------- */
+
+.pie {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 24px;
+  border-top: 1px solid var(--linea);
+}
+
+.pie p {
+  margin: 0;
+  font-size: 0.78rem;
+  color: var(--texto-suave);
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 760px) {
+  .zona-juego {
+    grid-template-columns: 1fr;
+  }
+
+  .panel-info {
+    border-left: none;
+    border-top: 1px solid var(--linea);
+    padding-left: 0;
+    padding-top: 28px;
+  }
+}
